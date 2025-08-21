@@ -3,6 +3,15 @@ import "./HomePage.css";
 import { products } from "../../starting-code/data/products";
 
 export function HomePage() {
+    fetch("http://localhost:3000/api/products")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error("Error fetching products:", error);
+        });        
+
   return (
     <>
       <link rel="icon" type="image/png" href="/home-favicon.png" />
