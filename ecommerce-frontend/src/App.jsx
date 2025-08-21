@@ -6,6 +6,7 @@ import { CheckoutPage } from './pages/CheckoutPage';
 import { OrdersPage } from './pages/OrdersPage';
 import { TrackingPage } from './pages/TrackingPage';
 import { CheckoutHeader } from './components/CheckoutHeader';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/Checkout" element={<CheckoutPage />} />
       <Route path="/Orders" element={<OrdersPage />} />
       <Route path="/tracking" element={<TrackingPage />} /> 
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }
