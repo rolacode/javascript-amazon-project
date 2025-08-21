@@ -3,7 +3,7 @@ import './header.css';
 import logo from '../assets/images/logo-white.png';
 import mobileLogo from '../assets/images/mobile-logo-white.png';
 import searchIcon from '../assets/images/icons/search-icon.png';
-import cart from '../assets/images/icons/cart-icon.png';
+import cart1 from '../assets/images/icons/cart-icon.png';
 
 export function Header({cart}) {
   let totalQuantity = 0;
@@ -35,7 +35,7 @@ export function Header({cart}) {
         </NavLink>
 
         <NavLink className="cart-link header-link" to="/checkout">
-          <img className="cart-icon" src={cart} alt="Cart Icon" />
+          <img className="cart-icon" src={cart1} alt="Cart Icon" />
           <div className="cart-quantity">{totalQuantity}</div>
           <div className="cart-text">Cart</div>
         </NavLink>
