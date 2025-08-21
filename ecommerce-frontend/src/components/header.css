@@ -103,9 +103,16 @@
   justify-content: end;
 }
 
+.header .orders-link.active {
+  color: white;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+}
+
 .header .orders-link {
   color: white;
-
+  text-decoration: none;
   display: flex;
   align-items: center;
   padding-left: 13px;
