@@ -5,6 +5,8 @@ import "./HomePage.css";
 
 export function HomePage() {
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
+
 
     useEffect(() => {
         // Fetch products data from the API
@@ -15,6 +17,16 @@ export function HomePage() {
             .catch((error) => {
                 console.error("Error fetching products:", error);
             });
+
+        axios.get("http://localhost:3000/api/cart-items")
+            .then((response) => {
+                // Handle cart items if needed
+                setCart(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching cart items:", error);
+            });                                                                                                         
+            
     }, []);    
 
   return (
@@ -23,7 +35,7 @@ export function HomePage() {
 
       <title>Ecommerce Project</title>
 
-      <Header />
+      <Header cart={cart} />
 
       <div className="home-page">
         <div className="products-grid">
