@@ -1,11 +1,14 @@
+import { NavLink } from 'react-router';
 import { Header } from '../components/Header';
 import './OrdersPage.css';
 
 export function OrdersPage() {
     return (
         <>
+            <link rel="icon" type="image/png" href="/orders-favicon.png" />
+
             <title>Orders</title>
-            
+
             <Header />
 
             <div className="orders-page">
@@ -54,11 +57,11 @@ export function OrdersPage() {
                         </div>
 
                         <div className="product-actions">
-                        <a href="/tracking">
+                        <NavLink to="/tracking">
                             <button className="track-package-button button-secondary">
                             Track package
                             </button>
-                        </a>
+                        </NavLink>
                         </div>
 
                         <div className="product-image-container">
@@ -82,11 +85,11 @@ export function OrdersPage() {
                         </div>
 
                         <div className="product-actions">
-                        <a href="/tracking">
+                        <NavLink to="/tracking">
                             <button className="track-package-button button-secondary">
                             Track package
                             </button>
-                        </a>
+                        </NavLink>
                         </div>
                     </div>
                     </div>
@@ -133,11 +136,11 @@ export function OrdersPage() {
                         </div>
 
                         <div className="product-actions">
-                        <a href="/tracking">
+                        <NavLink to="/tracking">
                             <button className="track-package-button button-secondary">
                             Track package
                             </button>
-                        </a>
+                        </NavLink>
                         </div>
                     </div>
                     </div>
