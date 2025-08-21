@@ -10,7 +10,7 @@ export function HomePage() {
 
     useEffect(() => {
         // Fetch products data from the API
-        axios.get("http://localhost:3000/api/products")
+        axios.get("/api/products")
             .then((response) => {
                 setProducts(response.data);
             })
@@ -18,7 +18,7 @@ export function HomePage() {
                 console.error("Error fetching products:", error);
             });
 
-        axios.get("http://localhost:3000/api/cart-items")
+        axios.get("/api/cart-items")
             .then((response) => {
                 // Handle cart items if needed
                 setCart(response.data);
