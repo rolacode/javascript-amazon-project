@@ -5,6 +5,7 @@ import mobileLogo from '../assets/images/mobile-logo.png';
 import checkoutLockIcon from '../assets/images/icons/checkout-lock-icon.png';
 
 export function CheckoutHeader() {
+
   return (
     <div className="checkout-header">
       <div className="header-content">

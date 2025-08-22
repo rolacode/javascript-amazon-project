@@ -3,14 +3,17 @@ import './header.css';
 import logo from '../assets/images/logo-white.png';
 import mobileLogo from '../assets/images/mobile-logo-white.png';
 import searchIcon from '../assets/images/icons/search-icon.png';
-import cart1 from '../assets/images/icons/cart-icon.png';
+import cartIcon from '../assets/images/icons/cart-icon.png';
 
-export function Header({cart}) {
+export function Header({ cart }) {
   let totalQuantity = 0;
 
-  cart.forEach((cartItem) => {
-    totalQuantity += cartItem.quantity;
-  });
+  // Add a conditional check to ensure 'cart' is a valid array
+  if (cart && Array.isArray(cart)) {
+    cart.forEach((cartItem) => {
+      totalQuantity += cartItem.quantity;
+    });
+  }
 
   return (
     <div className="header">
@@ -35,7 +38,7 @@ export function Header({cart}) {
         </NavLink>
 
         <NavLink className="cart-link header-link" to="/checkout">
-          <img className="cart-icon" src={cart1} alt="Cart Icon" />
+          <img className="cart-icon" src={cartIcon} alt="Cart Icon" />
           <div className="cart-quantity">{totalQuantity}</div>
           <div className="cart-text">Cart</div>
         </NavLink>

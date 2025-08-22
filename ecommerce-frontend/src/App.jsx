@@ -16,13 +16,10 @@ function App() {
 
   useEffect(() => {
     // Fetch cart items from the API
-    axios.get("/api/cart-items")
+    axios.get("/api/cart-items?expand=product")
       .then((response) => {
         setCart(response.data);
       })
-      .catch((error) => {
-        console.error("Error fetching cart items:", error);
-      });
   }, []);
   
 
