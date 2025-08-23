@@ -2,9 +2,9 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useEffect, useState, Fragment } from "react";
 import { NavLink } from "react-router";
-import { Header } from "../components/Header";
+import { Header } from "../../components/Header";
 import "./OrdersPage.css";
-import { formatMoney } from "../utilis/money";
+import { formatMoney } from "../../utilis/money";
 
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
