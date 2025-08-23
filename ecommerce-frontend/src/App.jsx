@@ -16,10 +16,12 @@ function App() {
 
   useEffect(() => {
     // Fetch cart items from the API
-    axios.get("/api/cart-items?expand=product")
-      .then((response) => {
-        setCart(response.data);
-      })
+    const fetchAppData = async () => {
+      const response = await axios.get("/api/cart-items?expand=product");
+      setCart(response.data);   
+    };
+    
+    fetchAppData();
   }, []);
   
 

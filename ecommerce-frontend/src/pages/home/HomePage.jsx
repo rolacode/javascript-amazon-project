@@ -9,14 +9,12 @@ export function HomePage({ cart }) {
 
   useEffect(() => {
     // Fetch products data from the API
-    axios
-      .get("/api/products")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-      });
+    const getHomeData = async () => {
+      const response = await axios.get("/api/products");
+      setProducts(response.data);
+    };
+
+    getHomeData();
   }, []);
 
   return (
