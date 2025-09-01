@@ -4,7 +4,7 @@ import "./NotFoundPage.css";
 export function NotFoundPage({ cart }) {
   return (
     <>
-        <link rel="icon" type="image/png" href="/not-found-favicon.png" />
+        <title>404-page</title>
       
         <Header cart={cart} />
 
