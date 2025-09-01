@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { Fragment } from "react";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router"; // Corrected import
 
 export function OrderDetails({ order }) {
   return (
@@ -9,7 +9,7 @@ export function OrderDetails({ order }) {
         return (
           <Fragment key={orderProduct.product.id}>
             <div className="product-image-container">
-              <img src={orderProduct.product.image} />
+              <img src={orderProduct.product.image} alt={orderProduct.product.name} />
             </div>
 
             <div className="product-details">
@@ -25,13 +25,15 @@ export function OrderDetails({ order }) {
                 <img
                   className="buy-again-icon"
                   src="images/icons/buy-again.png"
+                  alt="Buy Again Icon"
                 />
                 <span className="buy-again-message">Add to Cart</span>
               </button>
             </div>
 
             <div className="product-actions">
-              <NavLink to="/tracking">
+              {/* Ensure order.id and orderProduct.productId are correctly passed */}
+              <NavLink to={`/tracking/${order.id}/${orderProduct.productId}`}>
                 <button className="track-package-button button-secondary">
                   Track package
                 </button>

@@ -5,14 +5,17 @@ import { Header } from "../../components/Header";
 import "./OrdersPage.css";
 import { formatMoney } from "../../utilis/money";
 import { OrderDetails } from "./OrderDetails";
+import { TrackingPage } from "../TrackingPage";
 
 export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/orders?expand=products").then((response) => {
+    const fetchOrders = async () => {
+      const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
-    });
+    };
+    fetchOrders();
   }, []);
 
   return (
